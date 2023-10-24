@@ -3,7 +3,7 @@ import { api } from "./api"
 
 const store = configureStore({
     reducer: {
-        api: api.reducer,
+        [api.reducerPath]: api.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(api.middleware)

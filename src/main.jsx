@@ -17,10 +17,14 @@ const router = createBrowserRouter([
         path: '/',
         element: <AllBooks />,
       },
-        {
-          path: '/books/:bookId',
-          element: <FeaturedBook />,
-        },
+      {
+        path: '/books',
+        element: <AllBooks />,
+      },
+      {
+        path: '/books/:id',
+        element: <FeaturedBook />,
+      },
       // {
       //   path: '',
       //   element: <Three />,

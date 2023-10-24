@@ -7,7 +7,7 @@ const booksApi = api.injectEndpoints({
             query: () => "/books",
         }),
         getBookById: builder.query({
-            query: (id) => `/players/${id}`,
+            query: (id) => `/books/${id}`,
         }),
         })
     });
