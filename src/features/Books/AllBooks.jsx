@@ -5,15 +5,16 @@ Users should be able to click on an individual book to navigate to
 the SingleBook component and view its details. */
 import { useGetBooksQuery } from "./booksSlice"
 import { Link } from "react-router-dom"
+import "./books.scss"
 
 function BookCard({ b }) {
     return (
         <li>
             <img className="book-image" src={b.coverimage} alt={b.title} />
-            <h5>{b.title}</h5>
-            <p className="author">{b.author}</p>
+            <h2>{b.title}</h2>
+            <h3 className="author">{b.author}</h3>
             <p className="status">{b.available ? "Available" : "Out of Stock"}</p>
-            <Link to={`/books/${b.id}`}>Learn More</Link>
+            <Link to={`/books/${b.id}`} className="learn-more">Learn More</Link>
         </li>
     )
 }
@@ -22,11 +23,11 @@ export default function AllBooks() {
     console.log(data.books);
 
     return (
-        <div>
+        <ul className="book-list">
             {data.books?.map((b) => (
                 <BookCard key={b.id} b={b} />
             ))}
-        </div>
+        </ul>
     )
 }
 

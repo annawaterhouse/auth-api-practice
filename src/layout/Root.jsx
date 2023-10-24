@@ -1,4 +1,4 @@
-import './root.css'
+import './root.scss'
 import { Outlet } from "react-router-dom"
 import Navbar from "./Navbar"
 
