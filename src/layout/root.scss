@@ -5,16 +5,21 @@
   text-align: center;
 }
 
-header nav {
+nav {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding: 0 1rem;
 }
 
-nav li {
+li {
   list-style: none;
   font-size: 1.2rem;
-  display: inline-block;
+
 }
+
+
 
 

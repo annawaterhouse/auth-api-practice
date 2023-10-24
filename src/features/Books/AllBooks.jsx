@@ -5,7 +5,7 @@ Users should be able to click on an individual book to navigate to
 the SingleBook component and view its details. */
 import { useGetBooksQuery } from "./booksSlice"
 import { Link } from "react-router-dom"
-import "./books.scss"
+import "./allBooks.scss"
 
 function BookCard({ b }) {
     return (
@@ -14,7 +14,7 @@ function BookCard({ b }) {
             <h2>{b.title}</h2>
             <h3 className="author">{b.author}</h3>
             <p className="status">{b.available ? "Available" : "Out of Stock"}</p>
-            <Link to={`/books/${b.id}`} className="learn-more">Learn More</Link>
+            <Link to={`/books/${b.id}`} className="learn-more">Shop Now</Link>
         </li>
     )
 }
@@ -30,6 +30,3 @@ export default function AllBooks() {
         </ul>
     )
 }
-
-//     return isLoading ? loadMessage : error ? errMessage : BookList;
-// }
