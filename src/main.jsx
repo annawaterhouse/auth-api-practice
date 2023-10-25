@@ -7,6 +7,8 @@ import store from "./store/store"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import AllBooks from "./features/Books/AllBooks.jsx"
 import FeaturedBook from "./features/Books/FeaturedBook.jsx"
+import AuthForm from "./features/Auth/AuthForm.jsx"
+import Account from "./features/Account/Account.jsx"
 
 const router = createBrowserRouter([
   {
@@ -25,10 +27,18 @@ const router = createBrowserRouter([
         path: '/books/:id',
         element: <FeaturedBook />,
       },
-      // {
-      //   path: '',
-      //   element: <Three />,
-      // },
+      {
+        path: '/login',
+        element: <AuthForm />,
+      },
+      {
+        path: '/register',
+        element: <AuthForm />,
+      },
+      {
+        path: '/account',
+        element: <Account />,
+      },
     ],
   },
 ]);

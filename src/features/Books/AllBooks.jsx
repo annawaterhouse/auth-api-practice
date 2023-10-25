@@ -13,8 +13,7 @@ function BookCard({ b }) {
             <img className="book-image" src={b.coverimage} alt={b.title} />
             <h2>{b.title}</h2>
             <h3 className="author">{b.author}</h3>
-            <p className="status">{b.available ? "Available" : "Out of Stock"}</p>
-            <Link to={`/books/${b.id}`} className="learn-more">Shop Now</Link>
+            <Link to={`/books/${b.id}`} className="shop-now">{b.available ? "Shop Now" : "Out of Stock"}</Link>
         </li>
     )
 }
