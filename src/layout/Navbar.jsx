@@ -7,12 +7,13 @@ import { logout, selectToken, useGetUserInfoQuery } from "../features/Auth/authS
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import books from "../assets/books.png"
 
 
 function Menu() {
     return (
         <nav>
-            <h1>Books.com</h1>
+            <img className="logo" src={books} alt="logo" />
             <menu>
                 <li>
                     <NavLink to="/login">Sign In</NavLink>
@@ -28,6 +29,7 @@ function UserMenu({ token }) {
     const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false);
     const { data } = useGetUserInfoQuery(token);
+    
 
     const handleLogout = () => {
         dispatch((logout()));
@@ -36,7 +38,7 @@ function UserMenu({ token }) {
 
     const openMenu =
         (<nav>
-        <h1>Books.com</h1>
+        <img className="logo" src={books} alt="logo" />
         <menu>
             <li><a onClick={()=>{setIsOpen(false)}}>X</a></li>
             { data && <li><h4>Welcome, {data.firstname}</h4></li> }
@@ -48,11 +50,11 @@ function UserMenu({ token }) {
     
     const closedMenu = 
         (<nav>
-            <h1>Books.com</h1>
+            <img className="logo" src={books} alt="logo" />
             <menu>
             <i 
             className="fa fa-bars" 
-            onClick = {() => {setIsOpen(true)}}>X</i>
+            onClick = {() => {setIsOpen(true)}}></i>
             </menu>
         </nav>)
 

@@ -13,12 +13,13 @@ export default function BookHistoryCard({ token }) {
           } catch (err) {
             console.error(err);
           } 
-    }
+      }
 
     return (
         <ul>
             {data.reservation?.map((b) => (
                 <li key={b.id}>
+                    <img src={b.coverimage} alt={b.title} />
                     <h4>{b.title}</h4>
                     <h5>{b.author}</h5>
                     <button onClick={()=>handleReturn(b.id)}>Return</button>
