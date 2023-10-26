@@ -37,7 +37,6 @@ export default function AuthForm() {
       const authMethod = isLogin ? login : register;
       const credentials = isLogin ? { email, password } : { firstname, lastname, email, password };
 
-  
       setError(null);
       setLoading(true);
   

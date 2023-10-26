@@ -1,6 +1,5 @@
 import { api } from "../../store/api"
 
-
 const booksApi = api.injectEndpoints({
     endpoints: (builder) => ({
         getBooks: builder.query({
@@ -12,5 +11,4 @@ const booksApi = api.injectEndpoints({
         })
     });
 
-
-export const { useGetBooksQuery, useGetBookByIdQuery } = booksApi
+export const { useGetBooksQuery, useGetBookByIdQuery, useReserveMutation } = booksApi;
