@@ -16,6 +16,11 @@ nav {
   flex-wrap: wrap;
 }
 
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
 nav li {
   list-style: none;
   font-size: 1.2rem;
@@ -27,6 +32,7 @@ main {
   margin-top: 9rem;
   overflow: hidden;
   width: 100%;
+  
 }
 
 .logo {
