@@ -13,6 +13,8 @@ nav {
   background-color: #fff;
   text-align: right;
   width: 100vw;
+  height: 12%;
+  min-height: 100px;
   flex-wrap: wrap;
 }
 
@@ -36,9 +38,8 @@ main {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
-  padding: 2em;
+  width: 70px;
+  padding: 0 3em;
 }
 
 i {

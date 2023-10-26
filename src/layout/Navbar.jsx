@@ -13,7 +13,7 @@ import books from "../assets/books.png"
 function Menu() {
     return (
         <nav>
-            <img className="logo" src={books} alt="logo" />
+            <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
             <menu>
                 <li>
                     <NavLink to="/login">Sign In</NavLink>
@@ -38,7 +38,7 @@ function UserMenu({ token }) {
 
     const openMenu =
         (<nav>
-        <img className="logo" src={books} alt="logo" />
+        <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
         <menu>
             <li><a onClick={()=>{setIsOpen(false)}}>X</a></li>
             { data && <li><h4>Welcome, {data.firstname}</h4></li> }
@@ -50,7 +50,7 @@ function UserMenu({ token }) {
     
     const closedMenu = 
         (<nav>
-            <img className="logo" src={books} alt="logo" />
+            <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
             <menu>
             <i 
             className="fa fa-bars" 

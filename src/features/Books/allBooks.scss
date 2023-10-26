@@ -1,12 +1,7 @@
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    align-items: baseline;
-
-}
-
+.wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
 
 .shop-now {
     font-size: 1.1rem;

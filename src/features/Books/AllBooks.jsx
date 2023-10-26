@@ -9,7 +9,7 @@ import "./allBooks.scss"
 
 function BookCard({ b }) {
     return (
-        <li>
+        <li className="card">
             <img className="book-image" src={b.coverimage} alt={b.title} />
             <h2>{b.title}</h2>
             <h3 className="author">{b.author}</h3>
@@ -22,7 +22,7 @@ export default function AllBooks() {
     console.log(data.books);
 
     return (
-        <ul className="book-list">
+        <ul className="wrapper">
             {data.books?.map((b) => (
                 <BookCard key={b.id} b={b} />
             ))}
