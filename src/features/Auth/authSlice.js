@@ -9,6 +9,7 @@ const authApi = api.injectEndpoints({
         method: 'POST',
         body: user,
       }),
+      invalidatesTags: ['User']
     }),
     login: builder.mutation({
       query: (user) => ({
@@ -16,9 +17,11 @@ const authApi = api.injectEndpoints({
         method: 'POST',
         body: user,
       }),
+      invalidatesTags: ['User']
     }),
     getUserInfo: builder.query({
-        query: () => '/users/me'
+        query: () => '/users/me',
+        providesTags: ['User']
     }),
   }),
 });

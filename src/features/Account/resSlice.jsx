@@ -8,36 +8,20 @@ const resApi = api.injectEndpoints({
                 method: 'PATCH',
                 body: {available: false},
             }),
+            invalidatesTags: [ 'Books', 'Reservation' ]
         }),
         getRes: builder.query({
-            query: () => '/reservations/'
+            query: () => '/reservations/',
+            providesTags: [ 'Reservation' ],
         }),
         return: builder.mutation({
             query: (id) => ({
                 url: `/reservations/${id}`,
                 method: 'DELETE',
             }),
+            invalidatesTags: [ 'Books', 'Reservation' ],
         })
     })
 });
 
 export const { useReturnMutation, useReserveMutation, useGetResQuery } = resApi;
-// const resSlice = createSlice({
-//     name: 'reservation',
-//     initialState: { available: true },
-//     reducers: {
-//         setRes: (state) => {
-//             state.available = !state.available;
-//         },
-//     },
-//     extraReducers: (builder) => {
-//         builder.addMatcher(
-//             api.endpoints.reserve.matchFulfilled, (state) => {
-//                 state.available = !state.available;
-//             }
-//         )
-//     }
-// })
-
-// export default resSlice.reducer;
-// export const { setRes } = resSlice.actions;
