@@ -4,13 +4,15 @@ import Navbar from "./Navbar"
 
 function Root() {
 
+
+
   return (
     <>
       <header>
-        <Navbar />
+        <Navbar setFilterBooks={setFilterBooks} />
       </header>
       <main>
-        <Outlet />
+        <Outlet  />
       </main>
     </>
   )

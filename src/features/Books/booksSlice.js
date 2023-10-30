@@ -4,6 +4,7 @@ const booksApi = api.injectEndpoints({
     endpoints: (builder) => ({
         getBooks: builder.query({
             query: () => "/books",
+            transformResponse: (response) => response.books,
             providesTags: ['Books'],
         }),
         getBookById: builder.query({

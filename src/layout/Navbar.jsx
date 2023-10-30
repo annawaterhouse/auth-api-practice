@@ -8,14 +8,12 @@ import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import books from "../assets/books.png"
-import SearchBar from './SearchBar'
 
 
 function Menu() {
     return (
         <nav>
             <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
-            <SearchBar />
             <menu>
                 <li>
                     <NavLink to="/login">Sign In</NavLink>
@@ -41,7 +39,6 @@ function UserMenu({ token }) {
     const openMenu =
         (<nav>
         <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
-        <SearchBar />
         <menu>
             <li><a onClick={()=>{setIsOpen(false)}}>X</a></li>
             { data && <li><h4>Welcome, {data.firstname}</h4></li> }
@@ -54,7 +51,6 @@ function UserMenu({ token }) {
     const closedMenu = 
         (<nav>
             <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
-            <SearchBar />
             <menu>
             <i 
             className="fa fa-bars" 

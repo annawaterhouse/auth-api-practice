@@ -12,12 +12,12 @@ export default function Account() {
     const { data } = useGetUserInfoQuery(token);
 
     return data ? (
-        <section className="account">
+        <>
             <h1>Profile</h1>
             <h2>{data.firstname} {data.lastname}</h2>
             <h3>Book History:</h3>
             <HistoryCard token={token} />
-        </section>
+        </>
     ) : (<p>Loading profile...</p>)
 }
 

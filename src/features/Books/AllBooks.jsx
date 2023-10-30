@@ -5,6 +5,7 @@ Users should be able to click on an individual book to navigate to
 the SingleBook component and view its details. */
 import { useGetBooksQuery } from "./booksSlice"
 import { Link } from "react-router-dom"
+import { useState } from 'react'
 import "./allBooks.scss"
 
 function BookCard({ b }) {
@@ -13,19 +14,49 @@ function BookCard({ b }) {
             <img className="book-image" src={b.coverimage} alt={b.title} />
             <h2>{b.title}</h2>
             <h3 className="author">{b.author}</h3>
-            <Link to={`/books/${b.id}`} className="shop-now">{b.available ? "Shop Now" : "Out of Stock"}</Link>
+            <Link to={`/books/${b.id}`} className="learn">Learn More</Link>
+            {b.available ? <p className="available">Available</p> : <p className="unavailable">Unavailable</p>}
         </li>
     )
 }
 export default function AllBooks() {
-    const { data = {} } = useGetBooksQuery();
-    console.log(data.books);
+    const { data: books } = useGetBooksQuery();
+    const [filterBooks, setFilterBooks] = useState([]);
+    const [searchField, setSearchField] = useState('');
+    console.log(filterBooks)
+
+    const handleSearch = (e) => {
+        setSearchField(e.target.value);
+        const filtered = books.filter((item) => item.title.includes(searchField))
+        setFilterBooks(filtered)
+
+    }
+    const unfiltered = (
+        <ul className="wrapper">
+                {books?.map((b) => (
+                    <BookCard key={b.id} b={b} />
+                ))}
+        </ul>
+    );
+    const filtered = (
+        <ul className="wrapper">
+                {filterBooks?.map((b) => (
+                    <BookCard key={b.id} b={b} />
+                ))}
+        </ul>
+    )
 
     return (
-        <ul className="wrapper">
-            {data.books?.map((b) => (
-                <BookCard key={b.id} b={b} />
-            ))}
-        </ul>
+        <>
+            <form>
+                <input
+                    className="search"
+                    type="text"
+                    value={searchField}
+                    onChange={handleSearch}
+                />
+            </form>
+            {filterBooks ? unfiltered : filtered}
+        </>
     )
 }

@@ -1,5 +1,6 @@
+
 #root {
-  width: 100vw;
+  max-width: 100vw;
   margin: 0 auto;
   text-align: center;
 }
@@ -11,25 +12,31 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  text-align: right;
-  width: 100vw;
-  height: 12%;
   min-height: 100px;
-  flex-wrap: wrap;
+  width: 100%;
+  padding: 0.5rem 1.2rem;
 }
+
 
 li {
   list-style: none;
   text-decoration: none;
 }
 
-nav li {
-  list-style: none;
-  font-size: 1.2rem;
-  padding-right: 4rem;
-  margin-top: 0
+.searchbar {
+  flex-basis: 60%;
+  max-width: 500px;
+  overflow: hidden;
+
+}
+input {
+  width: 80%;
 }
 
+menu {
+  flex-basis: 30%;
+
+}
 main {
   margin-top: 9rem;
   overflow: hidden;
@@ -38,13 +45,11 @@ main {
 }
 
 .logo {
-  width: 70px;
-  padding: 0 3em;
+flex-basis: 10%;
+max-width: 100px;
+padding: 1rem;
 }
 
-i {
-  padding-right: 5rem;
-}
 
 
 
