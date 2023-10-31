@@ -9,7 +9,7 @@ function Root() {
   return (
     <>
       <header>
-        <Navbar setFilterBooks={setFilterBooks} />
+        <Navbar />
       </header>
       <main>
         <Outlet  />

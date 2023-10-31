@@ -54,7 +54,7 @@ export default function AuthForm() {
     };
 
     return(
-        <>
+        <main>
         <h1>{authAction}</h1>
         <form onSubmit={attemptAuth}>
         {!isLogin && (
@@ -100,6 +100,6 @@ export default function AuthForm() {
         <a onClick={() => setIsLogin(!isLogin)}>{altCopy}</a>
         {loading && <p>Logging in...</p>}
         {error && <p>{error.data.message}</p>}
-      </>
+      </main>
     )
 }

@@ -21,15 +21,14 @@ function BookCard({ b }) {
 }
 export default function AllBooks() {
     const { data: books } = useGetBooksQuery();
-    const [filterBooks, setFilterBooks] = useState([]);
+    const [filterBooks, setFilterBooks] = useState(books);
     const [searchField, setSearchField] = useState('');
     console.log(filterBooks)
 
     const handleSearch = (e) => {
         setSearchField(e.target.value);
-        const filtered = books.filter((item) => item.title.includes(searchField))
-        setFilterBooks(filtered)
-
+        const filteredBooks = books.filter((item) => item.title.includes(searchField))
+        setFilterBooks(filteredBooks)
     }
     const unfiltered = (
         <ul className="wrapper">
@@ -56,7 +55,7 @@ export default function AllBooks() {
                     onChange={handleSearch}
                 />
             </form>
-            {filterBooks ? unfiltered : filtered}
+            {!filterBooks ? unfiltered : filtered}
         </>
     )
 }
