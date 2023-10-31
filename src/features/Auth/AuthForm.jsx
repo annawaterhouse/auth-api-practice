@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useLoginMutation, useRegisterMutation } from './authSlice';
 import { useNavigate } from 'react-router-dom';
 import "./form.scss"
-
+//lester's dual form example 
 export default function AuthForm() {
     const navigate = useNavigate();
 
@@ -22,6 +22,7 @@ export default function AuthForm() {
     const [lastname, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isInputValueVisible, setIsInputValueVisible] = useState(false);
   
     // Form submission
     const [login] = useLoginMutation();
@@ -52,6 +53,8 @@ export default function AuthForm() {
         setLoading(false);
       }
     };
+
+    const handleToggleVisibility = () => {setIsInputValueVisible(!isInputValueVisible)};
 
     return(
         <main>
@@ -88,12 +91,14 @@ export default function AuthForm() {
           <label>
             Password
             <input
-              type="password"
+              type={isInputValueVisible ? "text" : "password"}
               value={password}
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
+            <a type="button" onClick={handleToggleVisibility}>
+            {isInputValueVisible ? "Hide" : "Show"}</a>
           </label>
           <button>{authAction}</button>
         </form>

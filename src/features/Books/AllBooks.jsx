@@ -27,8 +27,13 @@ export default function AllBooks() {
 
     const handleSearch = (e) => {
         setSearchField(e.target.value);
-        const filteredBooks = books.filter((item) => item.title.includes(searchField))
-        setFilterBooks(filteredBooks)
+        const filteredBooks = books.filter((item) => item.title.includes(searchField));
+        setFilterBooks(filteredBooks);
+        if (searchField === '') {
+            return setFilterBooks(books);
+        }
+        
+
     }
     const unfiltered = (
         <ul className="wrapper">
