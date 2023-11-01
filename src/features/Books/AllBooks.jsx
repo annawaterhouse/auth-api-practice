@@ -5,7 +5,9 @@ Users should be able to click on an individual book to navigate to
 the SingleBook component and view its details. */
 import { useGetBooksQuery } from "./booksSlice"
 import { Link } from "react-router-dom"
-import { useState } from 'react'
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import "./allBooks.scss"
 
 function BookCard({ b }) {
@@ -53,6 +55,7 @@ export default function AllBooks() {
     return (
         <>
             <form>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
                 <input
                     className="search"
                     type="text"
