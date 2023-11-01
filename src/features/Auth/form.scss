@@ -1,0 +1,40 @@
+main {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+div.login-signup {
+    margin: 0 auto;
+
+}
+.auth-form {
+    max-width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+input {
+    padding: 0.3rem;
+}
+
+i {
+    position: absolute;
+    right: 8px;
+}
+
+
+
+
+
+
+
+
+

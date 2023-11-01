@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { useLoginMutation, useRegisterMutation } from './authSlice';
 import { useNavigate } from 'react-router-dom';
 import "./form.scss"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 //lester's dual form example 
 export default function AuthForm() {
     const navigate = useNavigate();
@@ -57,9 +59,9 @@ export default function AuthForm() {
     const handleToggleVisibility = () => {setIsInputValueVisible(!isInputValueVisible)};
 
     return(
-        <main>
+      <div className="login-signup">
         <h1>{authAction}</h1>
-        <form onSubmit={attemptAuth}>
+        <form className="auth-form" onSubmit={attemptAuth}>
         {!isLogin && (
             <><label>
             Firstname
@@ -97,14 +99,14 @@ export default function AuthForm() {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
-            <a type="button" onClick={handleToggleVisibility}>
-            {isInputValueVisible ? "Hide" : "Show"}</a>
+            <i type="button" onClick={handleToggleVisibility}>
+            {isInputValueVisible ? <FontAwesomeIcon className="i-eye" icon={faEyeSlash} /> : <FontAwesomeIcon className="i-eye" icon={faEye} />}</i>
           </label>
           <button>{authAction}</button>
         </form>
         <a onClick={() => setIsLogin(!isLogin)}>{altCopy}</a>
         {loading && <p>Logging in...</p>}
         {error && <p>{error.data.message}</p>}
-      </main>
+      </div>
     )
 }
