@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom"
 
 export default function BookHistoryCard({ token }) {
     const { data = { } } = useGetResQuery(token);
-    const [ useReturn ] = useReturnMutation();
+    const returnBook = useReturnMutation();
     const navigate = useNavigate();
 
     const handleReturn = async (id) => {
          try {
-            await useReturn(id).unwrap();
+            await returnBook(id).unwrap();
             navigate('/account');
           } catch (err) {
             console.error(err);
