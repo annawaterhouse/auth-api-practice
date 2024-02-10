@@ -1,3 +1,3 @@
 # React + Vite 
 
-Practice exercise for working with APIs. Minimally styled with SCSS.
+Project to begin working with APIs. Minimally styled with SCSS.
