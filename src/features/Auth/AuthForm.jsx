@@ -1,14 +1,10 @@
-/* TODO - add your code to create a functional React component that 
-renders a login form */
-/* TODO - add your code to create a functional React component 
-that renders a registration form */
 import { useState } from 'react';
 import { useLoginMutation, useRegisterMutation } from './authSlice';
 import { useNavigate } from 'react-router-dom';
 import "./form.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-//lester's dual form example 
+
 export default function AuthForm() {
     const navigate = useNavigate();
 
