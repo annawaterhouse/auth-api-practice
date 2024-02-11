@@ -1,16 +1,31 @@
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+
+}
+
 #root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100lvh;
   display: grid;
-  grid-template-rows: auto auto;
+  align-items: center;
+  justify-content: center;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   background-color: #fffefb;
-
+  
 }
+
 header {
   position: fixed;
-  grid-row: 1/2;
   top: 0;
   left: 0;
   right: 0;
@@ -28,13 +43,13 @@ header {
   }
 }
 main {
-  padding-top: 10rem;
-  overflow: hidden;
-  width: 100%;
-  padding: 1rem;
-  grid-row-start: 2;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  max-width: 2000px;
+  margin: 10rem 0 2rem 0;
+  padding: 1rem;
 }
 
 .signin-button {
@@ -99,6 +114,7 @@ li {
 
 a {
   color: #714da6;
+  text-decoration: none;
 }
 
 

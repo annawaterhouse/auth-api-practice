@@ -1,8 +1,3 @@
-/* TODO - add your code to create a functional React component 
-that displays all of the available books in the library's catalog. 
-Fetch the book data from the provided API. 
-Users should be able to click on an individual book to navigate to 
-the SingleBook component and view its details. */
 import { useGetBooksQuery } from "./booksSlice"
 import { Link } from "react-router-dom"
 import { useState } from 'react';
@@ -12,12 +7,19 @@ import "./allBooks.scss"
 
 function BookCard({ b }) {
     return (
-        <li className="card">
-            <img className="book-image" src={b.coverimage} alt={b.title} />
-            <h2>{b.title}</h2>
-            <h3 className="author">{b.author}</h3>
+        <li className="cards__item">
+          <section className="card">
+
+          <img className="card__image" src={b.coverimage} alt={b.title} />
+
+            
+          <article className="card__content">
+            <h2 className="card__title">{b.title}</h2>
+            <h3 className="card__text">{b.author}</h3>
             <Link to={`/books/${b.id}`} className="learn">Learn More</Link>
             {b.available ? <p className="available">Available</p> : <p className="unavailable">Unavailable</p>}
+          </article>
+          </section>
         </li>
     )
 }
@@ -53,7 +55,7 @@ export default function AllBooks() {
     )
 
     return (
-        <>
+        <section className="home">
             <form>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                 <input
@@ -64,6 +66,6 @@ export default function AllBooks() {
                 />
             </form>
             {!filterBooks ? unfiltered : filtered}
-        </>
+        </section>
     )
 }
