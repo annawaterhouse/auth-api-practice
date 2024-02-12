@@ -35,11 +35,20 @@ header {
   
   nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  width: 100vw;
   padding: 0 2.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   img { width: 60px; padding-bottom: 0.65rem}
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    max-width: 2000px;
   }
 }
 main {
@@ -47,7 +56,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 2000px;
   margin: 10rem 0 2rem 0;
   padding: 1rem;
 }
@@ -71,7 +79,6 @@ main {
   position: relative;
   height: 2.8rem;
   padding-right: 3.3rem;
-  cursor: pointer;
 }
 
 .signin-button .icon {

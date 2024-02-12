@@ -9,7 +9,8 @@ import books from "../assets/books.png"
 function Menu() {
     return (
         <nav>
-          <NavLink to="/">
+        <section>
+        <NavLink to="/">
             <img className="logo" src={books} alt="logo" />
           </NavLink>
           <NavLink to="/login">
@@ -31,6 +32,8 @@ function Menu() {
               </div>
             </button>
           </NavLink>
+        </section>
+
         </nav>
       );
 }

@@ -7,16 +7,17 @@ import "./allBooks.scss"
 
 function BookCard({ b }) {
     return (
-        <li className="cards__item">
-          <section className="card">
+        <li className="card-list">
+          <section className="card-container">
+          <div className="card-image" alt={b.title} style={{backgroundImage: `url(${b.coverimage})`}}>
+          </div>
+          <article className="card-content">
 
-          <img className="card__image" src={b.coverimage} alt={b.title} />
-
-            
-          <article className="card__content">
-            <h2 className="card__title">{b.title}</h2>
-            <h3 className="card__text">{b.author}</h3>
-            <Link to={`/books/${b.id}`} className="learn">Learn More</Link>
+          <section className="card-info">
+            <h2 className="card-title">{b.title}</h2>
+            <h3 className="card-author">{b.author}</h3>
+            </section>
+            <Link to={`/books/${b.id}`} className="card-button">Learn More</Link>
             {b.available ? <p className="available">Available</p> : <p className="unavailable">Unavailable</p>}
           </article>
           </section>
