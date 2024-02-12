@@ -1,4 +1,5 @@
 import { useGetBooksQuery } from "./booksSlice"
+import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom"
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,17 +9,18 @@ import "./allBooks.scss"
 function BookCard({ b }) {
     return (
         <li className="card-list">
-          <section className="card-container">
+          <section className="card-container container">
           <div className="card-image" alt={b.title} style={{backgroundImage: `url(${b.coverimage})`}}>
           </div>
           <article className="card-content">
-
+          {b.available ? <p className="available">Available</p> : <p className="unavailable">Unavailable</p>}
           <section className="card-info">
             <h2 className="card-title">{b.title}</h2>
             <h3 className="card-author">{b.author}</h3>
+
             </section>
             <Link to={`/books/${b.id}`} className="card-button">Learn More</Link>
-            {b.available ? <p className="available">Available</p> : <p className="unavailable">Unavailable</p>}
+
           </article>
           </section>
         </li>
@@ -57,7 +59,7 @@ export default function AllBooks() {
 
     return (
         <section className="home">
-            <form>
+            {/* <form>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                 <input
                     className="search"
@@ -65,7 +67,7 @@ export default function AllBooks() {
                     value={searchField}
                     onChange={handleSearch}
                 />
-            </form>
+            </form> */}
             {!filterBooks ? unfiltered : filtered}
         </section>
     )
