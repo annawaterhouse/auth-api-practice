@@ -1,8 +1,8 @@
-$primary-blue:#3F51B5;
+$primary-blue: #3f51b5;
 $secondary-blue: #757de8;
 
 .home {
-  padding: 3rem;
+  padding: 4rem 3rem;
 
   .wrapper {
     display: grid;
@@ -68,7 +68,7 @@ $secondary-blue: #757de8;
     width: 100%;
     gap: 0.5rem;
     padding: 1rem;
-   
+
     .card-title {
       font-size: 1.1rem;
       line-height: 1.4rem;
@@ -84,28 +84,26 @@ $secondary-blue: #757de8;
       line-height: 0.1rem;
     }
     .card-button:hover {
-        color: $primary-blue;
+      color: $primary-blue;
     }
     .card-button {
       display: flex;
-        justify-content: center;
-        padding: 0.6rem 1rem 1rem 1rem;
+      justify-content: center;
+      padding: 0.6rem 1rem 1rem 1rem;
       align-items: center;
       border-radius: 0.25rem;
       color: $secondary-blue;
       font-weight: 800;
-        letter-spacing: 0.02rem;
-   
+      letter-spacing: 0.02rem;
+
       .arrow {
         font-size: 25px;
-   
       }
     }
 
     .available,
     .unavailable {
-        padding-bottom: 0.5rem;
-      color: #a370f0;
+      padding-bottom: 0.5rem;
       letter-spacing: 0.04rem;
       font-size: 0.7rem;
       font-weight: 500;
@@ -113,7 +111,7 @@ $secondary-blue: #757de8;
       width: 90%;
     }
     .available {
-        color: rgba(128, 128, 128, 0.77);
+      color: rgba(128, 128, 128, 0.77);
     }
     .unavailable {
       color: rgba(128, 128, 128, 0.77);
@@ -124,44 +122,41 @@ $secondary-blue: #757de8;
 //single featured book page css
 
 .featured {
-display: flex;
-position: relative;
-width: 100%;
-gap: 3.5rem;
-padding: 0 2rem;
-justify-content: center;
-align-items: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+  gap: 3.5rem;
+  padding: 0 2rem;
+  justify-content: center;
+  align-items: center;
 
-
-.col-right {
+  .col-right {
     width: 60%;
     padding-right: 2rem;
     .info-group {
-        line-height: 0;
-        h2 {
-            line-height: 1;
-        }
-        h3 {
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
+      line-height: 0;
+      h2 {
+        line-height: 1;
+      }
+      h3 {
+        text-transform: uppercase;
+        font-weight: 500;
+      }
     }
     p {
-        padding: 1rem 0;
-        max-width: 70ch;
+      padding: 1rem 0;
+      max-width: 70ch;
     }
-    
-   
+
     button {
-        border: none;
-        border-radius: 0.25rem;
-        padding: 1rem 1.8rem;
-        letter-spacing: 0.04rem;
-        font-weight: 600;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 1rem 1.8rem;
+      letter-spacing: 0.04rem;
+      font-weight: 600;
     }
-}
-.col-left {
+  }
+  .col-left {
     width: 40%;
     display: flex;
     position: relative;
@@ -169,14 +164,9 @@ align-items: center;
     justify-content: center;
     align-items: flex-end;
 
-        
     img {
-        max-width: 380px;
-        width: 100%;
+      max-width: 380px;
+      width: 100%;
     }
-
-
-
+  }
 }
-}
-
