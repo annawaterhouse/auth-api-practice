@@ -38,7 +38,6 @@ header {
   right: 0;
   z-index: 100;
   background-color: $bg-color;
-  padding: 1rem 0;
   height: 91px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   nav {
@@ -46,19 +45,19 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0 2.5rem;
 
-    img {
-      width: 60px;
-      padding-bottom: 0.65rem;
-    }
-  }
-  section {
+  
+  menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 2000px;
+    padding: 0 2.5rem;
+    img {
+      width: 60px;
+    }
+  }
   }
 }
 main {
@@ -74,7 +73,6 @@ main {
 }
 
 .signin-button {
-  margin-bottom: 1rem;
   background: $secondary-blue;
   color: $bg-color;
   font-family: inherit;

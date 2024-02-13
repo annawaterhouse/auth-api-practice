@@ -4,12 +4,13 @@ import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import books from "../assets/books.png"
+import { IoMdMenu } from "react-icons/io";
 
 
 function Menu() {
     return (
         <nav>
-        <section>
+        <menu>
         <NavLink to="/">
             <img className="logo" src={books} alt="logo" />
           </NavLink>
@@ -32,8 +33,7 @@ function Menu() {
               </div>
             </button>
           </NavLink>
-        </section>
-
+        </menu>
         </nav>
       );
 }
@@ -54,22 +54,20 @@ function UserMenu({ token }) {
     const openMenu =
         (<nav>
         <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
-        <menu>
-            <li><a onClick={()=>{setIsOpen(false)}}>X</a></li>
-            { data && <li><h4>Welcome, {data.firstname}</h4></li> }
-            <li><NavLink to="/books">Discover Books</NavLink></li>
-            <li><NavLink to="/account">My Account</NavLink></li>
-            <li><a onClick={handleLogout}>Sign Out</a></li>
+        <menu className="open">
+            <a onClick={()=>{setIsOpen(false)}}>X</a>
+            { data && <h4>Welcome, {data.firstname}</h4> }
+            <NavLink to="/books">Discover Books</NavLink>
+            <NavLink to="/account">My Account</NavLink>
+            <a onClick={handleLogout}>Sign Out</a>
         </menu>
         </nav>)
     
     const closedMenu = 
         (<nav>
+        <menu>
             <NavLink to="/"><img className="logo" src={books} alt="logo" /></NavLink>
-            <menu>
-            <i 
-            className="fa fa-bars" 
-            onClick = {() => {setIsOpen(true)}}></i>
+            <button className="closed"><IoMdMenu onClick = {() => {setIsOpen(true)}} /></button>
             </menu>
         </nav>)
 
