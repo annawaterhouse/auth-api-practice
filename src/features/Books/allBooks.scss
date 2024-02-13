@@ -1,3 +1,6 @@
+$primary-blue:#3F51B5;
+$secondary-blue: #757de8;
+
 .home {
   padding: 3rem;
 
@@ -7,17 +10,17 @@
     margin: 0;
     gap: 4rem;
     padding: 0;
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
       grid-template-columns: repeat(3, minmax(160px, 1fr));
       gap: 3rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
       grid-template-columns: repeat(2, minmax(160px, 1fr));
       gap: 2rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -30,7 +33,7 @@
   }
 
   .card-container {
-    height: 500px;
+    height: 440px;
     width: 340px;
     background-color: white;
     border-radius: 0.25rem;
@@ -64,7 +67,7 @@
     text-align: center;
     width: 100%;
     gap: 0.5rem;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
    
     .card-title {
       font-size: 1.1rem;
@@ -80,17 +83,19 @@
       font-weight: 400;
       line-height: 0.1rem;
     }
+    .card-button:hover {
+        color: $primary-blue;
+    }
     .card-button {
       display: flex;
         justify-content: center;
-     padding: 0.8rem 0;
-
+        padding: 0.6rem 1rem 1rem 1rem;
       align-items: center;
       border-radius: 0.25rem;
-      color: #a370f0;
-      font-weight: 700;
-      letter-spacing: 0.07rem;
-      font-size: 1rem;
+      color: $secondary-blue;
+      font-weight: 800;
+        letter-spacing: 0.02rem;
+   
       .arrow {
         font-size: 25px;
    
@@ -122,20 +127,38 @@
 display: flex;
 position: relative;
 width: 100%;
-padding: 1rem;
-justify-content: flex-start;
+gap: 3.5rem;
+padding: 0 2rem;
+justify-content: center;
 align-items: center;
+
 
 .col-right {
     width: 60%;
-    line-height: 1.6;
     padding-right: 2rem;
+    .info-group {
+        line-height: 0;
+        h2 {
+            line-height: 1;
+        }
+        h3 {
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+    }
+    p {
+        padding: 1rem 0;
+        max-width: 70ch;
+    }
+    
+   
     button {
         border: none;
         border-radius: 0.25rem;
         padding: 1rem 1.8rem;
         letter-spacing: 0.04rem;
-        font-size: 0.9rem;
+        font-weight: 600;
     }
 }
 .col-left {
@@ -144,34 +167,16 @@ align-items: center;
     position: relative;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0 2rem;
-    button {
-        border: none;
-        border-radius: 0.25rem;
-        padding: 1rem 1.8rem;
-        letter-spacing: 0.04rem;
-        font-weight: 600;
-        position: absolute;
-        color:#a370f0;
-        top:-120px;
-        left: 0;
-        background-color: transparent;
-        .icon {
-            font-size: 30px;
-            color:#a370f0;
-        }
-        .icon:hover {
-            color: #7b52b9;
-        }
-    
-    }
+    align-items: flex-end;
+
+        
     img {
+        max-width: 380px;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 0.25rem;
     }
+
+
+
 }
 }
 

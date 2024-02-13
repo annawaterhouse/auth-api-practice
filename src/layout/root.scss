@@ -1,8 +1,17 @@
+// Universal Color Styling
+$primary-blue:#3F51B5;
+$secondary-blue: #757de8;
+$tertiary-blue: #dedeff;
+$bg-color: #ffffff;
+$text: #333333;
+$secondary-font: #5c5c5c;
+$primary-gray: #c2c2c2;
+
+
 *,
 *::before,
-*::after { 
+*::after {
   box-sizing: border-box;
-
 }
 
 #root {
@@ -20,8 +29,7 @@
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  background-color: #fffefb;
-  
+  background-color: $bg-color;
 }
 
 header {
@@ -30,17 +38,21 @@ header {
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: #fffefb;
+  background-color: $bg-color;
   padding: 1rem 0;
-  height: 10%;
-  nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0 2.5rem;
+  height: 91px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  img { width: 60px; padding-bottom: 0.65rem}
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 2.5rem;
+
+    img {
+      width: 60px;
+      padding-bottom: 0.65rem;
+    }
   }
   section {
     display: flex;
@@ -55,16 +67,17 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-padding: 5rem 2.5rem;
-margin: 0;
-width: 100%;
+  padding: 5rem 2.5rem;
+  margin: 0;
+  width: 100%;
   height: 90%;
+  background-color: $bg-color;
 }
 
 .signin-button {
   margin-bottom: 1rem;
-  background: #a370f0;
-  color: #fffefb;
+  background: $secondary-blue;
+  color: $bg-color;
   font-family: inherit;
   padding: 0.35em;
   padding-left: 1.2rem;
@@ -75,7 +88,7 @@ width: 100%;
   letter-spacing: 0.05rem;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 1.6rem -0.6rem #714da6;
+  box-shadow: inset 0 0 1.6rem -0.6rem $secondary-blue;
   overflow: hidden;
   position: relative;
   height: 2.8rem;
@@ -83,7 +96,7 @@ width: 100%;
 }
 
 .signin-button .icon {
-  background: #fffefb;
+  background: $bg-color;
   margin-left: 1rem;
   position: absolute;
   display: flex;
@@ -92,7 +105,7 @@ width: 100%;
   height: 2.2rem;
   width: 2.2rem;
   border-radius: 0.18em;
-  box-shadow: 0.1rem 0.1rem 0.6rem 0.2rem #7b52b9;
+  box-shadow: 0.1rem 0.1rem 0.6rem 0.2rem $secondary-blue;
   right: 0.3rem;
   transition: all 0.3s;
 }
@@ -104,7 +117,7 @@ width: 100%;
 .signin-button .icon svg {
   width: 1.1rem;
   transition: transform 0.3s;
-  color: #7b52b9;
+  color: $secondary-blue;
 }
 
 .signin-button:hover .icon svg {
@@ -132,7 +145,34 @@ button {
   flex-direction: column;
 }
 
+//typography
+/* Extra Small */
+.t-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+/* Small */
+.t-small {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.base {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+/* Large */
+.t-lg {
+  font-size: 1.25rem;
+  line-height: 1.5rem; /* Adjusted line height for consistency */
+}
+/* Extra Large */
+.t-xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 
-
-
-
+/* Extra Extra Large */
+.t-xxl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}

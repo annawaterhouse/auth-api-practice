@@ -2,8 +2,6 @@ import { useGetBooksQuery } from "./booksSlice"
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom"
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import "./allBooks.scss"
 
 function BookCard({ b }) {
@@ -13,14 +11,11 @@ function BookCard({ b }) {
           <div className="card-image" alt={b.title} style={{backgroundImage: `url(${b.coverimage})`}}>
           </div>
           <article className="card-content">
-          {b.available ? <p className="available">Available</p> : <p className="unavailable">Unavailable</p>}
           <section className="card-info">
             <h2 className="card-title">{b.title}</h2>
             <h3 className="card-author">{b.author}</h3>
-
             </section>
             <Link to={`/books/${b.id}`} className="card-button">Learn More</Link>
-
           </article>
           </section>
         </li>
